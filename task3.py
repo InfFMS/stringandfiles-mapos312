@@ -7,12 +7,11 @@
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
 from collections import Counter
-with open ('task3.txt', 'r', encoding='utf-8') as f:
+with open('task3.txt', 'r', encoding='utf-8') as f:
     x = f.read()
-# Разбил текст на слова a и считаю их количество b
-b = x.split()
+y = x.replace(".", " ").replace(",", " ")
+b = y.lower().split()
 a = Counter(b)
-# пишу резы в новый файл в алфавитном порядке
 with open('task3new.txt', 'w', encoding='utf-8') as new_file:
-    for b in sorted(a):
-        new_file.write(f"{b}: {a[b]}\n")
+    for word in sorted(a):
+        new_file.write(f"{word}: {a[word]}\n")

@@ -8,15 +8,21 @@
 with open('task1.txt', 'r', encoding='utf-8') as f:
     x = f.read()
 
-# считаем кол во строк a
+# считаю количество строк a
 lines = x.splitlines()
 a = len(lines)
 
-# считаю кол во слов b
-b = len(x.split())
+with open('task1new.txt', 'w', encoding='utf-8') as new_file:
+    new_file.write(x.replace("—", " "))
 
-# считаю кол во символов c
+# Считаем количество слов b в новом файле
+with open('task1new.txt', 'r', encoding='utf-8') as new_file:
+    y = new_file.read()
+b = len(y.split())
+
+# количество символов c в исходном файле
 c = len(x)
+
 print(a)
 print(b)
 print(c)
